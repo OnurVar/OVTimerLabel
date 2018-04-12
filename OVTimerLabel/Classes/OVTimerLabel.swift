@@ -30,7 +30,6 @@ public class OVTimerLabel: UILabel {
     public func set(date: Date){
         self.date = date
     }
-   
     
     public func startTimer(){
         if date == nil {
@@ -42,6 +41,15 @@ public class OVTimerLabel: UILabel {
     public func stopTimer(){
         stopScheduledTimer()
     }
+
+    public func set(font: UIFont){
+        self.font = font
+    }
+    
+    public func set(fontSize: CGFloat){
+        self.font = self.font.withSize(fontSize)
+    }
+    
     
     
     //MARK: Private Methods
