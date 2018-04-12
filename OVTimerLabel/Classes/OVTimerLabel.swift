@@ -18,6 +18,11 @@ public class OVTimerLabel: UILabel {
     fileprivate var timer : Timer!
     fileprivate var date : Date!
     
+    //MARK: View Life Cycle
+    
+    deinit {
+        stopScheduledTimer()
+    }
     
     //MARK: Public Methods
     
