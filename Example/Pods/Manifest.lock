@@ -1,0 +1,16 @@
+PODS:
+  - OVTimerLabel (0.1.0)
+
+DEPENDENCIES:
+  - OVTimerLabel (from `../`)
+
+EXTERNAL SOURCES:
+  OVTimerLabel:
+    :path: ../
+
+SPEC CHECKSUMS:
+  OVTimerLabel: 966ab1bec8b5335012d47bc269093f57721a2aef
+
+PODFILE CHECKSUM: 86a9fc8a2af87f6591a7060fbd470a5b3e49646e
+
+COCOAPODS: 1.4.0

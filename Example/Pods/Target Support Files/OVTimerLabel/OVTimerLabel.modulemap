@@ -1,0 +1,6 @@
+framework module OVTimerLabel {
+  umbrella header "OVTimerLabel-umbrella.h"
+
+  export *
+  module * { export * }
+}

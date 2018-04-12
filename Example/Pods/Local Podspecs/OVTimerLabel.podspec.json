@@ -1,0 +1,22 @@
+{
+  "name": "OVTimerLabel",
+  "version": "0.1.0",
+  "summary": "A short description of OVTimerLabel.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/OnurVar/OVTimerLabel",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "OnurVar": "var.onur@hotmail.com"
+  },
+  "source": {
+    "git": "https://github.com/OnurVar/OVTimerLabel.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "OVTimerLabel/Classes/**/*"
+}
