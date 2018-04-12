@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name             = 'OVTimerLabel'
-s.version          = '0.1.1'
+s.version          = '0.1.2'
 s.summary          = 'Simple Timer Label'
 s.description      = <<-DESC
 Simple Timer Label which counts up/down for date
