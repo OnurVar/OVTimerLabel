@@ -16,7 +16,11 @@ public class OVTimerLabel: UILabel {
     
     //MARK: Private's
     fileprivate var timer : Timer!
-    fileprivate var date : Date!
+    fileprivate var date : Date!{
+        didSet{
+            setTimerLabel()
+        }
+    }
     
     //MARK: View Life Cycle
     
@@ -76,26 +80,28 @@ public class OVTimerLabel: UILabel {
     }
     
     @objc fileprivate func didTimerTrigger(_ timer: Timer){
-        
+        setTimerLabel()
+    }
+    
+    func setTimerLabel(){
         var checkDate : Date!
         if let date = date {
             checkDate = date
         }
-
+        
         var interval = Double(Date().timeIntervalSince(checkDate))
         if interval < 0 {
             interval = interval * (-1)
         }
-        
+        interval = ceil(interval)
         
         let hours   = Int(interval / 3600)
-        let minutes = Int((interval - Double(hours   * 60)) / 60)
-        let seconds = Int(interval - Double(minutes * 60) - Double(hours * 60))
+        let minutes = Int((interval - Double(hours   * 3600)) / 60)
+        let seconds = Int(interval - Double(minutes * 60) - Double(hours * 3600))
         
         self.text = String(format: "%02d%@%02d%@%02d",hours,seperator,minutes,seperator,seconds)
         
     }
-    
     
     
 }

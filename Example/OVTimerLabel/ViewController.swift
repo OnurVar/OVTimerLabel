@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        lblTimer.set(date: Date().addingTimeInterval(60))
+//        lblTimer.set(date: Date().addingTimeInterval(60000))
         lblTimer.startTimer()
         // Do any additional setup after loading the view, typically from a nib.
     }
