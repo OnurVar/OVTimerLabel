@@ -7,12 +7,14 @@
 
 import UIKit
 
-public class OVTimerLabel: UILabel {
+@IBDesignable
+open class OVTimerLabel: UILabel {
 
     
-    //MARK: Public's
-    public var isHoursEnabled = true
-    public var seperator = ":"
+    //MARK: open's
+    @IBInspectable open var isHoursEnabled : Bool = true
+    @IBInspectable open var resetOnStopTimer : Bool = false
+    @IBInspectable open var seperator : String = ":"
     
     //MARK: Private's
     fileprivate var timer : Timer!
@@ -28,38 +30,41 @@ public class OVTimerLabel: UILabel {
         stopScheduledTimer()
     }
     
-    //MARK: Public Methods
+    //MARK: open Methods
     
-    override public func awakeFromNib() {
+    override open func awakeFromNib() {
         super.awakeFromNib()
         self.font = UIFont(name: "DBLCDTempBlack", size: 20.0)
-        self.text = isHoursEnabled ? String(format: "00%@00%@00", seperator,seperator) : String(format: "00%@00", seperator)
+        resetTimer()
     }
     
-    public func set(date: Date){
+    open func set(date: Date){
         self.date = date
     }
     
-    public func startTimer(){
+    open func startTimer(){
         if date == nil {
             date = Date()
         }
         startScheduledTimer()
     }
     
-    public func stopTimer(){
+    open func stopTimer(){
         stopScheduledTimer()
     }
-
-    public func set(font: UIFont){
+    
+    open func resetTimer(){
+        self.text = isHoursEnabled ? String(format: "00%@00%@00", seperator,seperator) : String(format: "00%@00", seperator)
+    }
+    
+    open func set(font: UIFont){
         self.font = font
     }
     
-    public func set(fontSize: CGFloat){
+    open func set(fontSize: CGFloat){
         self.font = self.font.withSize(fontSize)
     }
-    
-    
+
     
     //MARK: Private Methods
     
@@ -68,6 +73,10 @@ public class OVTimerLabel: UILabel {
             timer.invalidate()
             timer = nil
         }
+        
+        if resetOnStopTimer {
+            resetTimer()
+        }
     }
     
     fileprivate func startScheduledTimer(){
@@ -75,8 +84,10 @@ public class OVTimerLabel: UILabel {
         stopScheduledTimer()
         
         //Initialize Timer
-        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(didTimerTrigger(_:)), userInfo: nil, repeats: true)
-        timer.fire()
+        DispatchQueue.main.async {
+            self.timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(self.didTimerTrigger(_:)), userInfo: nil, repeats: true)
+            self.timer.fire()
+        }
     }
     
     @objc fileprivate func didTimerTrigger(_ timer: Timer){
@@ -99,7 +110,7 @@ public class OVTimerLabel: UILabel {
         let minutes = Int((interval - Double(hours   * 3600)) / 60)
         let seconds = Int(interval - Double(minutes * 60) - Double(hours * 3600))
         
-        self.text = String(format: "%02d%@%02d%@%02d",hours,seperator,minutes,seperator,seconds)
+        self.text = isHoursEnabled ? String(format: "%02d%@%02d%@%02d",hours,seperator,minutes,seperator,seconds) : String(format: "%02d%@%02d",minutes,seperator,seconds)
         
     }
     
