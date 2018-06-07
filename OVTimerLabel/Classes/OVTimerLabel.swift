@@ -17,6 +17,7 @@ open class OVTimerLabel: UILabel {
     @IBInspectable open var seperator : String = ":"
     
     //MARK: Private's
+    fileprivate var initialInterval = Double(0)
     fileprivate var timer : Timer!
     fileprivate var date : Date!{
         didSet{
@@ -30,7 +31,8 @@ open class OVTimerLabel: UILabel {
         stopScheduledTimer()
     }
     
-    //MARK: open Methods
+    
+    //MARK: Public Methods
     
     override open func awakeFromNib() {
         super.awakeFromNib()
@@ -57,6 +59,12 @@ open class OVTimerLabel: UILabel {
         self.text = isHoursEnabled ? String(format: "00%@00%@00", seperator,seperator) : String(format: "00%@00", seperator)
     }
     
+    open func setInterval(interval: Double){
+        initialInterval = interval
+        setIntervalScreen(interval: 0)
+    }
+    
+    
     open func set(font: UIFont){
         self.font = font
     }
@@ -66,7 +74,12 @@ open class OVTimerLabel: UILabel {
     }
 
     
+    
     //MARK: Private Methods
+    
+    @objc fileprivate func didTimerTrigger(_ timer: Timer){
+        setTimerLabel()
+    }
     
     fileprivate func stopScheduledTimer(){
         if timer != nil {
@@ -89,12 +102,9 @@ open class OVTimerLabel: UILabel {
             self.timer.fire()
         }
     }
-    
-    @objc fileprivate func didTimerTrigger(_ timer: Timer){
-        setTimerLabel()
-    }
-    
-    func setTimerLabel(){
+
+    fileprivate func setTimerLabel(){
+        
         var checkDate : Date!
         if let date = date {
             checkDate = date
@@ -105,10 +115,16 @@ open class OVTimerLabel: UILabel {
             interval = interval * (-1)
         }
         interval = ceil(interval)
+        setIntervalScreen(interval: interval)
         
-        let hours   = Int(interval / 3600)
-        let minutes = Int((interval - Double(hours   * 3600)) / 60)
-        let seconds = Int(interval - Double(minutes * 60) - Double(hours * 3600))
+    }
+    
+    fileprivate func setIntervalScreen(interval: Double){
+        let totalInterval = interval + initialInterval
+        
+        let hours   = Int(totalInterval / 3600)
+        let minutes = Int((totalInterval - Double(hours   * 3600)) / 60)
+        let seconds = Int(totalInterval - Double(minutes * 60) - Double(hours * 3600))
         
         self.text = isHoursEnabled ? String(format: "%02d%@%02d%@%02d",hours,seperator,minutes,seperator,seconds) : String(format: "%02d%@%02d",minutes,seperator,seconds)
         

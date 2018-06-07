@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="tkj-Nw-Dik">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,81 +22,96 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cbf-pB-gSE" customClass="OVTimerLabel" customModule="OVTimerLabel">
-                                <rect key="frame" x="20" y="283.5" width="335" height="100"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pVL-gc-0Qc" customClass="OVTimerLabel" customModule="OVTimerLabel">
+                                <rect key="frame" x="20" y="40" width="335" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="Fac-Ry-x6e"/>
+                                    <constraint firstAttribute="height" constant="40" id="L0f-0J-JBE"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aFa-VW-b9f">
+                                <rect key="frame" x="16" y="80" width="343" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="zZP-yc-WAe"/>
+                                </constraints>
+                                <state key="normal" title="Trigger Label 1"/>
+                                <connections>
+                                    <action selector="btnLabel1Tapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="NFl-vp-drg"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g8L-lQ-JGv" customClass="OVTimerLabel" customModule="OVTimerLabel">
+                                <rect key="frame" x="16" y="160" width="343" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Vba-jX-ztE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4nn-3l-zr9">
+                                <rect key="frame" x="16" y="200" width="343" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="EKN-nb-lwn"/>
+                                </constraints>
+                                <state key="normal" title="Trigger Label 2"/>
+                                <connections>
+                                    <action selector="btnLabel2Tapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="alb-L3-e8Y"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2fw-c2-A2j" customClass="OVTimerLabel" customModule="OVTimerLabel">
+                                <rect key="frame" x="16" y="280" width="343" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Bxq-SM-BIa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DgF-Ry-qiI">
+                                <rect key="frame" x="16" y="320" width="343" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="CwO-IX-LvC"/>
+                                </constraints>
+                                <state key="normal" title="Trigger Label 3"/>
+                                <connections>
+                                    <action selector="btnLabel3Tapped:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="a1t-ZV-Nae"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="Cbf-pB-gSE" secondAttribute="trailing" constant="20" id="6Gb-ya-eYn"/>
-                            <constraint firstItem="Cbf-pB-gSE" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="lNn-Ta-M33"/>
-                            <constraint firstItem="Cbf-pB-gSE" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="r16-ox-vuy"/>
+                            <constraint firstItem="g8L-lQ-JGv" firstAttribute="trailing" secondItem="aFa-VW-b9f" secondAttribute="trailing" id="3ah-Rz-rmH"/>
+                            <constraint firstItem="DgF-Ry-qiI" firstAttribute="top" secondItem="2fw-c2-A2j" secondAttribute="bottom" id="5PI-iD-iT6"/>
+                            <constraint firstItem="DgF-Ry-qiI" firstAttribute="trailing" secondItem="2fw-c2-A2j" secondAttribute="trailing" id="60r-BH-bs4"/>
+                            <constraint firstItem="aFa-VW-b9f" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="84s-yB-hKy"/>
+                            <constraint firstItem="pVL-gc-0Qc" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="947-fd-oYu"/>
+                            <constraint firstItem="2fw-c2-A2j" firstAttribute="leading" secondItem="4nn-3l-zr9" secondAttribute="leading" id="AYs-Iq-yOZ"/>
+                            <constraint firstAttribute="trailing" secondItem="pVL-gc-0Qc" secondAttribute="trailing" constant="20" id="Dzs-0W-Y0g"/>
+                            <constraint firstItem="g8L-lQ-JGv" firstAttribute="top" secondItem="aFa-VW-b9f" secondAttribute="bottom" constant="40" id="HyI-Rz-Ien"/>
+                            <constraint firstItem="2fw-c2-A2j" firstAttribute="trailing" secondItem="4nn-3l-zr9" secondAttribute="trailing" id="J5C-jl-lnt"/>
+                            <constraint firstItem="2fw-c2-A2j" firstAttribute="top" secondItem="4nn-3l-zr9" secondAttribute="bottom" constant="40" id="JiN-LC-rcn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aFa-VW-b9f" secondAttribute="trailing" id="N2s-Vi-3T2"/>
+                            <constraint firstItem="pVL-gc-0Qc" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="20" id="R20-qt-r6u"/>
+                            <constraint firstItem="aFa-VW-b9f" firstAttribute="top" secondItem="pVL-gc-0Qc" secondAttribute="bottom" id="TIy-d1-0et"/>
+                            <constraint firstItem="4nn-3l-zr9" firstAttribute="top" secondItem="g8L-lQ-JGv" secondAttribute="bottom" id="a56-nD-LSS"/>
+                            <constraint firstItem="g8L-lQ-JGv" firstAttribute="leading" secondItem="aFa-VW-b9f" secondAttribute="leading" id="bD5-Ht-Q8b"/>
+                            <constraint firstItem="4nn-3l-zr9" firstAttribute="trailing" secondItem="g8L-lQ-JGv" secondAttribute="trailing" id="bK0-k2-7XK"/>
+                            <constraint firstItem="DgF-Ry-qiI" firstAttribute="leading" secondItem="2fw-c2-A2j" secondAttribute="leading" id="e9z-mn-DUh"/>
+                            <constraint firstItem="4nn-3l-zr9" firstAttribute="leading" secondItem="g8L-lQ-JGv" secondAttribute="leading" id="uUG-bP-SyH"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="jsA-2q-JiR"/>
                     <connections>
-                        <outlet property="lblTimer" destination="Cbf-pB-gSE" id="FGS-Rk-jGL"/>
+                        <outlet property="lblTimer1" destination="pVL-gc-0Qc" id="fIL-y6-8Sd"/>
+                        <outlet property="lblTimer2" destination="g8L-lQ-JGv" id="hvu-u8-Mva"/>
+                        <outlet property="lblTimer3" destination="2fw-c2-A2j" id="fj2-62-LJT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1479" y="32"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="5aN-rD-Oun">
-            <objects>
-                <viewController id="jPU-do-ESc" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="shG-KI-OGq"/>
-                        <viewControllerLayoutGuide type="bottom" id="e1I-TD-4FT"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="BHz-oe-3C3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7v6-mF-vvz">
-                                <rect key="frame" x="164" y="318.5" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="vXZ-lx-hvc" kind="push" id="JAT-1T-eca"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="7v6-mF-vvz" firstAttribute="centerX" secondItem="BHz-oe-3C3" secondAttribute="centerX" id="bwx-kh-4Y4"/>
-                            <constraint firstItem="7v6-mF-vvz" firstAttribute="centerY" secondItem="BHz-oe-3C3" secondAttribute="centerY" id="etr-BQ-X8R"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="ESY-Tz-Ciy"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Qgz-D3-NS7" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="730" y="32"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="zNd-vV-2HR">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tkj-Nw-Dik" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zVh-7z-NMt">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="jPU-do-ESc" kind="relationship" relationship="rootViewController" id="MBP-PP-CGR"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5KO-tA-WL7" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-57" y="32"/>
+            <point key="canvasLocation" x="770" y="24"/>
         </scene>
     </scenes>
 </document>

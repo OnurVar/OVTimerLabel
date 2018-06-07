@@ -11,23 +11,40 @@ import OVTimerLabel
 
 class ViewController: UIViewController {
 
-    @IBOutlet weak var lblTimer: OVTimerLabel!
+    @IBOutlet weak var lblTimer1: OVTimerLabel!
+    @IBOutlet weak var lblTimer2: OVTimerLabel!
+    @IBOutlet weak var lblTimer3: OVTimerLabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        lblTimer.set(date: Date().addingTimeInterval(60000))
-//        lblTimer.isHoursEnabled = false
-        lblTimer.startTimer()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        lblTimer1.resetTimer()
+        lblTimer2.resetTimer()
+        lblTimer3.resetTimer()
+        
+        
+        lblTimer3.setInterval(interval: Double(54))
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    deinit {
+        lblTimer1.stopTimer()
+        lblTimer2.stopTimer()
+        lblTimer3.stopTimer()
     }
     
-    deinit {
-        lblTimer.stopTimer()
+  
+    @IBAction func btnLabel1Tapped(_ sender: Any) {
+        lblTimer1.startTimer()
+    }
+    
+    
+    @IBAction func btnLabel2Tapped(_ sender: Any) {
+        lblTimer2.setInterval(interval: Double(75))
+    }
+    
+    
+    @IBAction func btnLabel3Tapped(_ sender: Any) {
+        lblTimer3.startTimer()
     }
 }
 
