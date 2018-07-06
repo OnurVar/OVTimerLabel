@@ -3,9 +3,4 @@ use_frameworks!
 target 'OVTimerLabel_Example' do
   pod 'OVTimerLabel', :path => '../'
 
-  target 'OVTimerLabel_Tests' do
-    inherit! :search_paths
-
-    
-  end
 end
